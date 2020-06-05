@@ -127,3 +127,83 @@
     margin-right: 1rem;
   }
 }
+
+
+/////////////////////////////////////////////////
+// SIDE NAVIGATION
+
+.side-nav {
+  font-size: 1.4rem;
+  list-style: none;
+  margin-top: 3.5rem;
+
+  &__item {
+    position: relative;
+
+    //select all items exept the last child
+    &:not(:last-child) {
+      margin-bottom: .5rem;
+    }
+  }
+
+  &__item::before {
+    //create a small line that becomes visible and expands to the right side when hovered
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 3px;
+    background-color: var(--color-primary);
+    //initial
+    transform: scaleY(0);
+    transition: transform .2s,
+                width .4s cubi c-bezier(1, 0, 0, 1) .2s,
+                background-color .1s;
+  }
+
+  //hover state of the item and --active should be the same
+   &__item:hover::before,
+   &__item--active::before {
+     //scales in the y direction from the center (origin)
+     transform: scaleY(1);
+     width: 100%;
+  }
+
+  &__item:active::before {
+    background-color: var(--color-primary-light);
+  }
+
+  &__link:link,
+  &__link:visited {
+    color: var(--color-grey-light-1);
+    text-decoration: none;
+    text-transform: uppercase;
+    display: block;
+    padding: 1.5rem 3rem;
+    position: relative;
+    z-index: 2;
+
+    //container for SVG and text
+    display: flex;
+    align-items: center; //vertically
+  }
+
+  &__icon {
+    width: 1.75rem;
+    height: 1.75rem;
+    margin-right: 2rem;
+    //current color of the parent element / current element
+    fill: currentColor;
+  }
+}
+
+/////////////////////////////////////////////////
+// LEGAL TEXT
+.legal {
+  font-size: 1.2rem;
+  color: var(--color-grey-light-4);
+  text-align: center;
+  padding: 2.5rem;
+
+}

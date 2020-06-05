@@ -31,10 +31,20 @@
   //flex-grow flex-shrink flex-basis
   flex: 0 0 18%;
 
+  //container for "side-nav" and "legal"
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+
+
 }
 
 .hotel-view {
   background-color: #fff;
   //occupy the entire remaining space (flex-grow: 1)
-  flex: 1
+  flex: 1;
+
+  //testing purposes
+  background-color: lightblue;
+  height: 80rem;
 }
