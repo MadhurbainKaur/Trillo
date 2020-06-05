@@ -9,9 +9,17 @@
 }
 
 .header {
+  font-size: 1.4rem;
   height: 7rem;
   background-color: #fff;
   border-bottom: var(--color-grey-light-2);
+
+  //container for "logo" "search" "user-nav"
+  display: flex;
+  // divide the empty space between the elements evenly along the main axis
+  justify-content: space-between;
+  //center the elemments long the cross axis
+  align-items: center;
 }
 
 .content {
