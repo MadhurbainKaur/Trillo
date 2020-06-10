@@ -47,8 +47,9 @@
 
 .detail {
   font-size: 1.4rem;
-  //container for "description and "user-reviews"
+  //container for "description "user-reviews" and "cta"
   display: flex;
+  //flex-wrap: wrap;
   padding: 4.5rem;
   background-color: var(--color-grey-light-1);
   border-bottom: var(--line);
